@@ -1,0 +1,84 @@
+extend base.pug 
+block content 
+    .container.mt-1
+        .row
+            .col-8.mx-auto
+                .card
+                    .card-body.py-0
+                        h1.fs-2.text-center Apply as Doner
+                        hr.mb-1
+                        form(action="", method="post") 
+                            .mb-2
+                                label(for="") Name 
+                                input.form-control(type="text" name="name")
+                            .row.mb-0
+                                .col 
+                                    .row(style='width: 340px;margin-left: -1px;')
+                                        label(for="") Gender
+                                        .mb-3.col.px-3.rounded.py-1.d-flex.border.border-1 
+                                            .m-1
+                                                input.me-2.form-check-input(type="radio" name="gender" value="male").me-1
+                                                label(for="").me-2.form-check-label Male
+                                            .m-1
+                                                input.me-2.form-check-input(type="radio" name="gender" value="female").me-1
+                                                label(for="").me-2.form-check-label Female
+                                            .m-1
+                                                input.me-2.form-check-input(type="radio" name="gender" value="other").me-1
+                                                label(for="").me-2.form-check-label Other
+                                .col
+                                    .mb-0
+                                        label(for="") Age  
+                                        input.form-control(type="number" name="age")
+                            .row.my-0
+                                .col 
+                                    label(for="") Bload Group
+                                    .mb-3.col.px-3.d-flex.border.border-1.col.px-3.rounded.py-1.d-flex.border.border-1                                     
+                                        .m-1 
+                                            input.form-check-input(type="radio" name="bloodGroup" value="O+").me-1
+                                            label(for="").form-check-label O+
+                                        .m-1 
+                                            input.form-check-input(type="radio" name="bloodGroup" value="O-").me-1
+                                            label(for="").form-check-label O-
+                                        .m-1 
+                                            input.form-check-input(type="radio" name="bloodGroup" value="A+").me-1
+                                            label(for="").form-check-label A+
+                                        .m-1 
+                                            input.form-check-input(type="radio" name="bloodGroup" value="A-").me-1
+                                            label(for="").form-check-label A-
+                                        .m-1 
+                                            input.form-check-input(type="radio" name="bloodGroup" value="B+").me-1
+                                            label(for="").form-check-label B+
+                                        .m-1 
+                                            input.form-check-input(type="radio" name="bloodGroup" value="B-").me-1
+                                            label(for="").form-check-label B-
+                                        .m-1 
+                                            input.form-check-input(type="radio" name="bloodGroup" value="AB+").me-1
+                                            label(for="").form-check-label AB+
+                                        .m-1 
+                                            input.form-check-input(type="radio" name="bloodGroup" value="AB-").me-1
+                                            label(for="").form-check-label AB-
+                            .row.my-0 
+                                .mb-3.col 
+                                    label(for="") Date of Coveid-19 positive 
+                                    input.form-control(type="date" name="cpd")
+                                .mb-3.col 
+                                    label(for="") Date of Coveid-19 negitive 
+                                    input.form-control(type="date" name="cnd")
+                            .row 
+                                .col.mb-2
+                                    label(for="") State 
+                                    select.form-select(name="state_id")
+                                        each x in state 
+                                            option(value=`${x._id}`)=x.state_name
+                                .col.mb-2
+                                    label(for="") City 
+                                    select.form-select(name="cityId")
+                                        option(value=`city`) Purnea
+                                        option(value=`city`) Puna
+                                        option(value=`city`) patna 
+                            .row 
+                                .col.mb-2
+                                    label(for="") Phone number 
+                                    input.form-control(type="number" name="phone_no")
+                            .mb-2
+                                input.btn.btn-success.w-100(type="submit" name="submit")

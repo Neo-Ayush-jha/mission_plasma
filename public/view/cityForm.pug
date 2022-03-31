@@ -1,0 +1,33 @@
+extend base.pug 
+block content 
+    .container.mt-5 
+        .row
+            .col-4
+                a.btn.btn-warning.float-end(href="",data-bs-toggle="modal",data-bs-target="#insertCat") Insert State  
+            .col-8
+                .card
+                    h1.fs-1.text-center.text-danger Insert City
+                    hr
+                    .card-body
+                        form(action="", method="post") 
+                            .mb-3 
+                                label(for="") City 
+                                input.form-control(type="text" name="cityName")
+                            .mb-3
+                                label(for="") State 
+                                select.form-select(name="state_id")
+                                    each x in state 
+                                        option(value=`${x._id}`)=x.state_name
+                            .mb-3 
+                                input.btn.btn-success.w-100(type="submit" name="submit")
+    .modal.fade#insertCat
+        .modal-dialog 
+            .modal-content 
+                .modal-header
+                    form(action="", method="post") 
+                        .mb-3 
+                            input.form-control(type="text" name="state_name" placeholder="State name.")
+                        .mb-3 
+                            input.form-control(type="text" name="country_name" placeholder="Country name")                   
+                        .mb-3 
+                            input.btn.btn-success.float-end.text-dark.w-100(type="submit", value="send")

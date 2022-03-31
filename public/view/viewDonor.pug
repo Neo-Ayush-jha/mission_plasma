@@ -1,0 +1,38 @@
+extend base.pug 
+block content 
+    .container.mt-5
+        .row
+            .col-7.mx-auto
+                .card
+                    .card-body 
+                        h3.text-danger.text-center About Plasma Donor
+                        hr
+                        table.table 
+                            tr 
+                                th.ps-3 Name   :- 
+                                td=donor.name 
+                            tr 
+                                th.ps-3 Gender   :- 
+                                td=donor.gender 
+                            tr 
+                                th.ps-3 Age   :- 
+                                td=donor.age 
+                            tr  
+                                th.ps-3 Phone number   :- 
+                                td=donor.phone_no 
+                            tr  
+                                th.ps-3 Blood Group   :-  
+                                td=donor.bloodGroup 
+                            tr  
+                                th.ps-3 Date of Covid-19 Positive   :- 
+                                td=donor.cpd 
+                            tr  
+                                th.ps-3 Date of Covid-19 Negitive   :-  
+                                td=donor.cnd 
+                            tr  
+                                th.ps-3 State name   :-
+                                td=donor.state_id
+                            tr  
+                                th.ps-3 City name   :-
+                                td=donor.city_id 
+                            

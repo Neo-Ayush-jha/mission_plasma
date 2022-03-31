@@ -1,0 +1,38 @@
+extend base.pug 
+block content 
+    .container.mt-5
+        .row
+            .col-7.mx-auto
+                .card
+                    .card-body 
+                        h3.text-danger.text-center About Plasma Requester
+                        hr
+                        table.table 
+                            tr 
+                                th.ps-3 Name   :- 
+                                td=requester.name 
+                            tr 
+                                th.ps-3 Gender   :- 
+                                td=requester.gender 
+                            tr 
+                                th.ps-3 Age   :- 
+                                td=requester.age 
+                            tr  
+                                th.ps-3 Phone number   :- 
+                                td=requester.phone_no 
+                            tr  
+                                th.ps-3 Blood Group   :-  
+                                td=requester.bloodGroup 
+                            tr  
+                                th.ps-3 Date of Covid-19 Positive   :- 
+                                td=requester.cpd 
+                            tr  
+                                th.ps-3 Date of Covid-19 Negitive   :-  
+                                td=requester.cnd 
+                            tr  
+                                th.ps-3 State name   :-
+                                td=requester.state_id.state_name 
+                            tr  
+                                th.ps-3 City name   :-
+                                td=requester.city_id 
+                            

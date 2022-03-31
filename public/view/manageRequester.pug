@@ -1,0 +1,39 @@
+extend base.pug
+block content 
+    .container.mt-1
+        .row.mb-3 
+            .col-12.mx-auto.mt-1 
+                .card
+                    .card-body
+                        h4.text-center.text-danger Manage Plasma Donor 
+                        hr.boder.boder-2.mb-0
+                        .card.border-white.border-3
+                            .card-body 
+                                table.table
+                                    tr 
+                                        th Name
+                                        th Gender
+                                        th Age
+                                        th Phone no.
+                                        th Blood Group
+                                        th Date of Covid-19 Positive
+                                        th Date of Covid-19 Negitive
+                                        th State 
+                                        th City
+                                        th Action
+                                    each val in requester 
+                                        tr 
+                                            td=val.name
+                                            td=val.gender
+                                            td=val.age
+                                            td=val.phone_no
+                                            td=val.bloodGroup
+                                            td=val.cpd
+                                            td=val.cnd
+                                            td=val.state_id.state_name
+                                            td=val.city_id
+                                            td 
+                                                a.btn.btn-danger.px-1.py-0(href="")
+                                                    i.bi.bi-trash-fill 
+                                                a.btn.btn-success.px-1.py-0(href=`/viewRequester/${val._id}/view/`)
+                                                    i.bi.bi-eye
